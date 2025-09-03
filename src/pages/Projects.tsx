@@ -6,12 +6,12 @@ export default function Projects() {
   // Centralized project data (add more as needed)
   const projects = useMemo(
     () => [
-      { name: "9PM Hair Salon", folder: "9PM", count: 3, slug: "9pm-hair-salon", cover: 1 },
-      { name: "Bloom Nail Spa", folder: "nail", count: 4, slug: "bloom-nail-spa", cover: 1 },
-      { name: "Fresh Cuts Barber Shopll", folder: "barber", count: 6, slug: "fresh-cuts-barber", cover: 1 },
-      { name: "Minato Japanese Restaurant", folder: "minato", count: 6, slug: "minato-japanese", cover: 1 },
-      { name: "Shabu Shabu Kyoto", folder: "shabu", count: 6, slug: "shabu-shabu-kyoto", cover: 1 },
-      { name: "Southcenter Arashi ramen", folder: "ramen", count: 7, slug: "southcenter-arashi-ramen", cover: 1 },
+      { name: "9PM Hair Salon", folder: "9PM", count: 3, slug: "9PM", cover: 1 },
+      { name: "Bloom Nail Spa", folder: "nail", count: 4, slug: "Bloom", cover: 1 },
+      { name: "Fresh Cuts Barber Shop", folder: "barber", count: 6, slug: "FreshCuts", cover: 1 },
+      { name: "Minato Japanese Restaurant", folder: "minato", count: 6, slug: "Minato", cover: 1 },
+      { name: "Shabu Shabu Kyoto", folder: "shabu", count: 6, slug: "Shabu", cover: 1 },
+      { name: "Southcenter Arashi ramen", folder: "ramen", count: 7, slug: "Arashi", cover: 1 },
     ],
     []
   );
@@ -60,7 +60,7 @@ export default function Projects() {
               key={p.name}
               className="project-card reveal up"
               style={{"--reveal-delay": `${80 + idx * 40}ms`} as any}
-              onClick={() => navigate(`/projects/${p.slug}`)}
+              onClick={() => navigate(`/gallary/${p.slug}`)}
               role="button"
               aria-label={`Open ${p.name} project page`}
             >
@@ -92,7 +92,7 @@ export default function Projects() {
                     className="btn-link"
                     onClick={(e) => {
                       e.stopPropagation();
-                      navigate(`/projects/${p.slug}`);
+                      navigate(`/gallary/${p.slug}`);
                     }}
                   >
                     View project →

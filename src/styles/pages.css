@@ -183,3 +183,88 @@
 
 /* Page container spacing on this page */
 .projects-page.page-container { padding-top: 1.25rem; }
+
+/* ===== Refined Commercial layout (keeps original info) ===== */
+.commercial-wrap { display: grid; gap: 2.5rem; }
+.section-intro h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.card {
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+/* Service list styling */
+.service-list.enhanced {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+.service-list.enhanced li {
+  padding: 0.85rem 0.9rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fff, #fafafa);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04) inset;
+}
+
+/* Form */
+.form-title { margin: 0 0 0.5rem; font-size: 1.15rem; letter-spacing: -0.01em; }
+.contact-form label { display: block; margin-bottom: 0.9rem; }
+.contact-form label > span { display: block; font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.35rem; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.14);
+  background: #fff;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.06);
+}
+
+/* Neutral (non-blue) button */
+.btn-dark {
+  display: inline-block;
+  width: auto;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #111, #333);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.6);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+.btn-dark:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(0,0,0,0.18); background: linear-gradient(135deg, #000, #222); }
+.btn-full { width: 100%; text-align: center; }
+
+/* Motion (respecting reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .services-card { opacity: 0; transform: translateY(8px); animation: cardIn 600ms ease forwards; }
+  @keyframes cardIn { to { opacity: 1; transform: none; } }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid-two { grid-template-columns: 1fr; }
+}

@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "../styles/pages.css";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const featureRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const featureRefs = useRef<Array<HTMLAnchorElement | null>>([]);
 
   useEffect(() => {
     // Stagger in the feature cards
@@ -68,7 +68,7 @@ export default function Home() {
               to={card.to}
               key={card.title}
               className="feature-card"
-              ref={(el) => (featureRefs.current[i] = el)}
+              ref={(el) => { featureRefs.current[i] = el; }}
             >
               <h3>{card.title}</h3>
               <p>{card.desc}</p>
